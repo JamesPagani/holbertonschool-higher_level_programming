@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Integers addition
+"""Integers addition.
+
 This function adds two integers or floats. Returns the sum of both numbers.
 
 If only one number is provided, the second will will default to 98.
 """
+
 
 def add_integer(a, b=98):
     """Peform an addition of two numbers. Both have to be numbers."""

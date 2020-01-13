@@ -1,0 +1,184 @@
+0x07.1 - Divide a Matrix
+===============================================================================
+Write a function that divides all elements of a matrix
+PROTOTYPE: def matrix_divided(matrix, div):
+        + ´matrix´ must be a list of integers or floats, otherwise raise a
+	  ´TypeError´ exception with the message ´matrix must be a matrix (list
+	  of lists) of integers/floats´
+	+ Each row of the ´matrix´ must be of the same size, otherwise rasie a
+	  ´TypeError´ exception with the message ´Each row of the matrix must
+	  have the same size
+	+ ´div´ must be a number (integer or float), otherwise raise a 
+	  ´TypeError´ exception with the message ´div must be a number´
+	+ ´div´ can't be equal to 0, otherwise raise a ´ZeroDivisionError´
+	  exception with the message ´division by zero´
+        + All elements of the matrix should be divided by div, rounded to 2 
+	  decimal places
+        + Returns a new matrix
+===============================================================================
+IMPORTING REQUIRED FUNCTION(S)
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+===============================================================================
+NORMAL CASES
+
+Case 1: 3x3 Matrix, all Integers, ´div´ is an integer
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> print(matrix_divided(matrix, 2))
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+Case 2: 2x2 Matrix, all Floats, ´div´ is an integer
+>>> matrix = [[3.6, 6.95], [4.237, 7.3456789]]
+>>> print(matrix_divided(matrix, 5))
+[[0.72, 1.39], [0.85, 1.47]]
+>>> print(matrix)
+[[3.6, 6.95], [4.237, 7.3456789]]
+
+Case 3: 2x4 Matrix, first row Integers, second row Floats, ´div´ is an integer
+>>> matrix = [[7, 14, 21, 28], [21.45, 28.319, 35.1234, 41.9]]
+>>> print(matrix_divided(matrix, 7))
+[[1.0, 2.0, 3.0, 4.0], [3.06, 4.05, 5.02, 5.99]]
+>>> print(matrix)
+[[7, 14, 21, 28], [21.45, 28.319, 35.1234, 41.9]]
+
+Case 4: 3x2 Matrix, mixed Integers and Floats, ´div´ is an integer
+>>> matrix = [[2, 6.98], [42.00, 12], [12.594, 3.1236], [1.98, 0.78]]
+>>> print(matrix_divided(matrix, 4))
+[[0.5, 1.75], [10.5, 3.0], [3.15, 0.78], [0.49, 0.2]]
+>>> print(matrix)
+[[2, 6.98], [42.0, 12], [12.594, 3.1236], [1.98, 0.78]]
+
+Case 5: 3x3 Matrix, all integers, ´div´ is a float
+>>> matrix = [[6, 12, 18], [24, 30, 36], [42, 48, 54]]
+>>> print(matrix_divided(matrix, 3.15))
+[[1.9, 3.81, 5.71], [7.62, 9.52, 11.43], [13.33, 15.24, 17.14]]
+>>> print(matrix)
+[[6, 12, 18], [24, 30, 36], [42, 48, 54]]
+
+Case 6: 2x2 Matrix, all floats, ´div´ is a float
+>>> matrix = [[3.14, 6.66], [4.20, 3.60]]
+>>> print(matrix_divided(matrix, 2.7))
+[[1.16, 2.47], [1.56, 1.33]]
+>>> print(matrix)
+[[3.14, 6.66], [4.2, 3.6]]
+
+===============================================================================
+EDGE CASES
+
+Case 1: 1x3 Matrix
+>>> matrix = [[3, 6, 9]]
+>>> print(matrix_divided(matrix, 3))
+[[1.0, 2.0, 3.0]]
+>>> print(matrix)
+[[3, 6, 9]]
+
+Case 2: 5x1 Matrix
+>>> matrix = [[1], [2], [3], [4], [5]]
+>>> print(matrix_divided(matrix, 5))
+[[0.2], [0.4], [0.6], [0.8], [1.0]]
+
+Case 3: 1x1 Matrix
+>>> matrix = [[1]]
+>>> print(matrix_divided(matrix, 2))
+[[0.5]]
+>>> print(matrix)
+[[1]]
+
+Case 4: Placing a string instead of a number
+>>> matrix = [[12, 24], ["Thirty Six", 48]]
+>>> print(matrix_divided(matrix, 6))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Case 5: Placing a digit-only string instead of a number
+>>> matrix = [["20", 40], ["60", "80"], [100, "120"]]
+>>> print(matrix_divided(matrix, 10))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Case 6: Inserting a ´None´ instead of a number
+>>> matrix = [[15, 30, None], [45, 60, 65]]
+>>> print(matrix_divided(matrix, 5))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Case 7: Passing a number instead of a row
+>>> matrix = [[1, 3, 5, 7], 9, [11, 13, 15, 17]]
+>>> print(matrix_divided(matrix, 2))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Case 8: Pasing a string instead of a row
+>>> matrix = ["Row One", [4, 6, 8], [10, 12, 14], [16, 18, 20]]
+>>> print(matrix_divided(matrix, 2))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Case 9: Pasing ´None´ instead of a row
+
+
+Case 10: Passing a Tuple instead of a list as a row
+
+
+Case 11: Passing a Dictionary instead of a list as a row
+
+
+Case 12: Passing a Set instead of a list as a row
+
+
+Case 13: Passing a string instead of a matrix
+
+
+Case 14: Passing a number instead of a matrix
+
+
+Case 15: Passing a ´None´ instead of a matrix
+
+
+Case 16: Make the matrix as a tuple of tuples
+
+
+Case 17: Make the matrix as a dictionary of dictionaries
+
+
+Case 18: Make the matrix as a set of sets
+
+
+Case 19: Matrix with 3 rows of sizes 3, 2 and 4 respectively
+
+
+Case 20: Passing a string to ´div´
+
+
+Case 21: Passing a digit only string to ´div´
+
+
+Case 22: Passing ´None´ to ´div´
+
+
+Case 23: Passing a number only list to ´div´
+
+
+Case 24: Passing a number only tuple to ´div´
+
+
+Case 25: Passing a dictionary to ´div´
+
+
+Case 26: Passing a number only set to ´div´
+
+
+Case 27: Passing 0 (zero) to ´div´
+
+
+Case 28: Passing a Matrix with three rows. Row 1 with 3 elements; Row 2 with 2
+         elements, one of them not a number; Row 3 with 4 elements
+>>> matrix = [[6, 12, 18], [None, 30], [36, 42, 48, 54]]
+>>> print(matrix_divided(matrix, 6))
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Case 29: Passing a 3x3 Matrix. Element (1,1) is not valid and ´div´ is 0
+
