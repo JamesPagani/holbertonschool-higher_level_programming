@@ -14,3 +14,46 @@ IMPORTING REQUIRED FUNCTIONS
 >>> print_square = __import__("4-print_square").print_square
 
 ===============================================================================
+NORMAL CASES:
+
+Case 1: Integer as a size
+
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+>>> print_square(0)
+<BLANKLINE>
+
+===============================================================================
+EDGE CASES:
+
+Case 2: Passing a float as size
+
+>>> print_square(2.24)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square("34")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(None)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+>>> print_square(-3)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+>>> print_square(-3.14)
+Traceback (most recent call last):
+TypeError: size must be an integer
