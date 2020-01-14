@@ -7,7 +7,7 @@ be a list of lists.
 
 
 def matrix_divided(matrix, div):
-    """Check if the matrix is valid and then divides each element by div"""
+    """Check if the matrix is valid and then divides each element by div."""
     if isinstance(matrix, list) is False:
         raise TypeError("""matrix must be a matrix (list of lists) of \
 integers/floats""")
