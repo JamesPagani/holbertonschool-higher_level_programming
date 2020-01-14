@@ -8,6 +8,38 @@ PROTOTYPE: def say_my_name(first_name, last_name=""):
       ´last_name must be a string´
 ===============================================================================
 IMPORTING REQUIRED FUNCTIONS:
->>> say_my_name = __import("3-say_my_name").say_my_name
+>>> say_my_name = __import__("3-say_my_name").say_my_name
 
 ===============================================================================
+NORMAL CASES:
+
+Case 1: Passing a string to ´first_name´; Leave ´last_name´ blank
+>>> say_my_name("Jaime Andres")
+My name is Jaime Andres 
+
+Case 2: Passing a string to ´first_name´ and ´last_name´
+>>> say_my_name("Jaime Andres", "Galvez Villamarin")
+My name is Jaime Andres Galvez Villamarin
+
+Case 3: Passing strings which contain other characters
+>>> say_my_name("1337", "h4x0r")
+My name is 1337 h4x0r
+
+===============================================================================
+EDGE CASES:
+
+Case 4: Passing an integer as a ´first_name´
+>>> say_my_name(300, "Leonidas")
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
+Case 5: Passing an integer as a ´last_name´
+>>> say_my_name("Chrysler", 300)
+Traceback (most recent call last):
+TypeError: last_name must be a string
+
+Case 6: Passing invalid ´first_name´ and ´last_name´
+>>> say_my_name(None, 0)
+Traceback (most recent call last):
+TypeError: first_name must be a string
+
