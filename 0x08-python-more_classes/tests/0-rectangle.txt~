@@ -1,0 +1,20 @@
+0x08.0 - Simple rectangle
+===============================================================================
+TASK OBJECTIVE: Write an empty class ´Rectangle´ that defines a rectangle.
+===============================================================================
+IMPORTING FUNCTIONS:
+>>> Rectangle = __import__("0-rectangle").Rectangle
+
+===============================================================================
+NORMAL CASES:
+
+>>> my_rectangle = Rectangle()
+>>> print(type(my_rectangle))
+<class '0-rectangle.Rectangle'>
+>>> print(my_rectangle.__dict__)
+{}
+
+===============================================================================
+EDGE CASES:
+
+None
