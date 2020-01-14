@@ -4,6 +4,7 @@
 Print a square of user-given size, as long as the size is a positive integer.
 """
 
+
 def print_square(size):
     """Print a square of size 'size'."""
     if isinstance(size, int) is False:
