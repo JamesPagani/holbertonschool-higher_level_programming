@@ -20,24 +20,26 @@ class Rectangle:
         """Initiate a basic rectangle."""
         self.height = height
         self.width = width
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def __del__(self):
         """Current instance saying Good Bye."""
         print("Bye rectangle...")
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
 
     def __str__(self):
         """Informal representation of this rectangle."""
-        for row in range(height):
-            for spot in range(width):
+        self.__figure = ""
+        for row in range(self.height):
+            for spot in range(self.width):
                 self.__figure += "#"
-            self.__figure += "\n"
+            if row + 1 != self.height:
+                self.__figure += "\n"
         return self.__figure
 
     def __repr__(self):
         """Formal representation of this square."""
-        return "Rectangle ({}, {})".format(width, height)
+        return "Rectangle ({}, {})".format(self.width, self.height)
 
     @property
     def width(self):
