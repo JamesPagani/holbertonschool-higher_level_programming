@@ -20,8 +20,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initiate a basic rectangle."""
-        self.width = width
         self.height = height
+        self.width = width
         number_of_instances += 1
 
     def __del__(self):
@@ -46,7 +46,7 @@ class Rectangle:
         """Retrieve this rectangle's width."""
         return self.__width
 
-    @height.setter
+    @width.setter
     def width(self, value):
         """Set this rectangle's width."""
         if not isinstance(value, int):

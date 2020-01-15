@@ -15,11 +15,12 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initiate a basic rectangle."""
-        self.width = width
         self.height = height
+        self.width = width
 
     def __str__(self):
         """Representation of this square (informal and official)."""
+        self.__figure = ""
         for row in range(height):
             for spot in range(width):
                 self.__figure += "#"
@@ -31,7 +32,7 @@ class Rectangle:
         """Retrieve this rectangle's width."""
         return self.__width
 
-    @height.setter
+    @width.setter
     def width(self, value):
         """Set this rectangle's width."""
         if not isinstance(value, int):
