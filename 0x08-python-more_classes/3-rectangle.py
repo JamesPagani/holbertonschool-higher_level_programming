@@ -21,10 +21,11 @@ class Rectangle:
     def __str__(self):
         """Representation of this square (informal and official)."""
         self.__figure = ""
-        for row in range(height):
-            for spot in range(width):
+        for row in range(self.height):
+            for spot in range(self.width):
                 self.__figure += "#"
-            self.__figure += "\n"
+            if row + 1 != self.height:
+                self.__figure += "\n"
         return self.__figure
 
     @property
