@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Change representation (Rectangle v7).
+"""A square is a rectangle (Rectangle v9).
 Create a rectangle that contains the following attributes:
     FIELDS:
         number_of_instances (integer, public)
@@ -10,6 +10,7 @@ Create a rectangle that contains the following attributes:
         area (width * height, instance).
         preimeter (2 * (width + height), instance).
         bigger_or_equal (rect_1, rect_2, static).
+        square(size, class).
 """
 
 
@@ -23,24 +24,26 @@ class Rectangle:
         """Initiate a basic rectangle."""
         self.height = height
         self.width = width
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def __del__(self):
         """Current instance saying Good Bye."""
         print("Bye rectangle...")
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
 
     def __str__(self):
         """Informal representation of this rectangle."""
-        for row in range(height):
-            for spot in range(width):
-                self.__figure += str(print_symbol)
-            self.__figure += "\n"
+        self.__figure = ""
+        for row in range(self.height):
+            for spot in range(self.width):
+                self.__figure += str(self.print_symbol)
+            if row + 1 != self.height:
+                self.__figure += "\n"
         return self.__figure
 
     def __repr__(self):
         """Formal representation of this square."""
-        return "Rectangle ({}, {})".format(width, height)
+        return "Rectangle ({}, {})".format(self.width, self.height)
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
