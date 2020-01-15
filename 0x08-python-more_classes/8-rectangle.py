@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Change representation (Rectangle v7).
+"""Compare rectangles (Rectangle v8).
 Create a rectangle that contains the following attributes:
     FIELDS:
         number_of_instances (integer, public)
