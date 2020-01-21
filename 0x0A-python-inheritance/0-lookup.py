@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Lookup
+"""Lookup.
+
 Write a function that returns the list of all available attributes and methods
 of an object.
 
