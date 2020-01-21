@@ -1,0 +1,69 @@
+Python 0x0A.7 - Integer validator
+===============================================================================
+OBJECTIVE: Write a class ´BaseGeometry´ with:
+    + Public instance method ´def area(self):´: Raises an Exception with the
+      message ´area() is not implemented´
+    + Public instance method ´def integer_validator(self, name, value):´: that
+      validates ´value´
+        - You can asume ´name´ is always a string
+        - If ´value´ is not an integer: raise a ´TypeError´ exception, with the
+          message ´<name> must be an integer´
+        - If ´value´ is less or equal to 0: raise a ValueError exception with
+          the message ´<name> must be greater than 0´
+===============================================================================
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+===============================================================================
+Case 1: Area launches an Exception
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+-------------------------------------------------------------------------------
+Case 2: Integer validator 1: Random integer greater than 0
+
+>>> bg.integer_validator("number", 74)
+
+-------------------------------------------------------------------------------
+Case 3: Integer validator 2: Passing 0
+
+>>> bg.integer_validator("NULL", 0)
+Traceback (most recent call last):
+ValueError: NULL must be greater than 0
+
+-------------------------------------------------------------------------------
+Case 4: Integer validator 3: Random number smaller than 0
+
+>>> bg.integer_validator("rebmun", -100)
+Traceback (most recent call last):
+ValueError: rebmun must be greater than 0
+
+-------------------------------------------------------------------------------
+Case 5: Integer validator 4: Passing a string instead of an integer
+
+>>> bg.integer_validator("Soulja", "Boy")
+Traceback (most recent call last):
+TypeError: Soulja must be an integer
+
+-------------------------------------------------------------------------------
+Case 6: Integer validator 5: Passing a float number instead of an integer
+
+>>> bg.integer_validator("Sniper", 0.78)
+Traceback (most recent call last):
+TypeError: Sniper must be an integer
+
+-------------------------------------------------------------------------------
+Case 7: Integer validator 6: Passing a boolean instead of an integer
+
+>>> bg.integer_validator("Truth_or_Dare", True)
+Traceback (most recent call last):
+TypeError: Truth_or_Dare must be an integer
+
+-------------------------------------------------------------------------------
+Case 8: Integer validator 7: Passing None instead of an integer
+
+>>> bg.integer_validator("None", None)
+Traceback (most recent call last):
+TypeError: None must be an integer
