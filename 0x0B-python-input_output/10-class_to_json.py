@@ -8,4 +8,5 @@ import json
 
 
 def class_to_json(obj):
+    """Serialize the directory description of a class into JSON."""
     return json.dumps(obj.__dict__)
