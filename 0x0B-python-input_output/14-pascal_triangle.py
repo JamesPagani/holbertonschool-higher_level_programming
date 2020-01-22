@@ -5,6 +5,7 @@ A function that builds a Pascal Triangle of a given height/depth.
 
 
 def pascal_triangle(n):
+    """Make a list of lists representing a whole Pascal triangle of size n."""
     triangle = []
     prev = []
     curr = []
