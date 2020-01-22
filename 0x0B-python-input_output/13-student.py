@@ -43,7 +43,8 @@ class Student:
         return out_dict
 
     def reload_from_json(self, json):
-        if "fisrt_name" in json:
+        """Load fields of this instance contained in a dictionary."""
+        if "first_name" in json:
             self.first_name = json["first_name"]
         if "last_name" in json:
             self.last_name = json["last_name"]
