@@ -38,7 +38,8 @@ class Student:
 
         out_dict = {}
         for a in attrs:
-            out_dict[a] = self.__dict__.get(a)
+            if a in self.__dict__:
+                out_dict[a] = self.__dict__.get(a)
         return out_dict
 
     def reload_from_json(self, json):
