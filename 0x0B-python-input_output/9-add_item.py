@@ -12,10 +12,10 @@ json_load = __import__("8-load_from_json_file").load_from_json_file
 
 
 try:
-    my_list = json_load("add_list.json")
+    my_list = json_load("add_item.json")
     my_list += argv[1:]
-    json_save(my_list, "add_list.json")
+    json_save(my_list, "add_item.json")
 except FileNotFoundError:
     my_list = []
     my_list += argv[1:]
-    json_save(my_list, "add_list.json")
+    json_save(my_list, "add_item.json")
