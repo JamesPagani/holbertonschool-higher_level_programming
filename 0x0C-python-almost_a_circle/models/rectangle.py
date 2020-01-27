@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """Rectangle class.
 
-A basic rectangle with a width, hieght and coordinates.
+A basic rectangle with a width, hieght and offset coordinates.
+
+It is capable of displaying its area, printing a rectangle made of hash (#)
+symbols and can update its values if needed to.
 """
 
 
@@ -9,7 +12,7 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """A VERY basic rectangle."""
+    """A basic rectangle."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize a new Rectangle instance."""
@@ -96,13 +99,25 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Update the id, width, height, x and y placement of the rectangle."""
-        try:
-            self.id = args[0]
-            self.width = args[1]
-            self.height = args[2]
-            self.x = args[3]
-            self.y = args[4]
-        except:
-            pass
+        if len(args) > 0:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except:
+                pass
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
