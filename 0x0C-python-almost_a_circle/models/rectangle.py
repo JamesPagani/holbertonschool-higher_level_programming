@@ -24,8 +24,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """An informal string representation of this Rectangle."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, \
-                                                       self.y, self.width, \
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                       self.y, self.width,
                                                        self.height)
 
     @property
