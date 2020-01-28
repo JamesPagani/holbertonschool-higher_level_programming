@@ -24,9 +24,14 @@ class Rectangle(Base):
 
     def __str__(self):
         """An informal string representation of this Rectangle."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, \
-                                                       self.y, self.width, \
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                       self.y, self.width,
                                                        self.height)
+
+    def to_dictionary(self):
+        """Return a dictionary representation of a rectangle."""
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
 
     @property
     def width(self):
