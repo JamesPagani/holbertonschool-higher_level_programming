@@ -1,5 +1,6 @@
 #!/usr/bin/pyhton3
-"""Select States
+"""Select States.
+
 Using MySQLdb, make a query to the database.
 """
 import MySQLdb
