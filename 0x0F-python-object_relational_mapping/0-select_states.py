@@ -1,4 +1,4 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """Select States.
 
 Using MySQLdb, make a query to the database.
