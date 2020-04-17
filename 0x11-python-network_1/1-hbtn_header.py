@@ -10,8 +10,7 @@ import sys
 import urllib.request
 
 
-http_request = urllib.request.Request(sys.argv[1])
-with urllib.request.urlopen(http_request) as response:
+with urllib.request.urlopen(sys.argv[1]) as response:
     headers = response.info()
 
 print(headers["X-Request-Id"])
