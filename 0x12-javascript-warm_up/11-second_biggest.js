@@ -6,7 +6,7 @@ let second = nums[1];
 if (nums.length === 0 || nums.length === 1) {
   console.log(0);
 } else {
-  for (let i = 1; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     if (nums[i] > highest) {
       second = highest;
       highest = nums[i];
