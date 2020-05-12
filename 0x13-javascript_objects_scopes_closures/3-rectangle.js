@@ -7,12 +7,12 @@ class Rectangle {
     }
   }
 
-  print() {
+  print () {
     let sqRow;
     for (let i = 0; i < this.height; i++) {
       sqRow = '';
       for (let j = 0; j < this.width; j++) {
-	sqRow += 'X';
+        sqRow += 'X';
       }
       console.log(sqRow);
     }
