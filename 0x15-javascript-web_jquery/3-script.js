@@ -1,2 +1,3 @@
-#!/usr/bin/node
-$('DIV#red_header').addClass('red');
+$('DIV#red_header').click(function () {
+  $('HEADER').addClass('red');
+});
