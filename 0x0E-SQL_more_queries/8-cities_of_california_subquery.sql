@@ -1,3 +1,3 @@
 -- Select all cities from the California state
 -- In the database, California has an id of 1.
-SELECT id, name FROM hbtn_0d_usa.cities WHERE state_id=1 ORDER BY id ASC;
+SELECT id, name FROM hbtn_0d_usa.cities WHERE state_id=1 ORDER BY cities.id ASC;
