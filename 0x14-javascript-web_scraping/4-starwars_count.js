@@ -8,7 +8,7 @@ request.get(process.argv[2], function (error, response, body) {
   } else {
     const films = JSON.parse(body).results;
     let appears = 0;
-    for (let i = 0; i < JSON.parse(body).count; i++) {
+    for (let i = 0; i < films.length; i++) {
       for (let j = 0; j < films[i].characters.length; j++) {
         if (films[i].characters[j].includes(target)) {
           appears++;
